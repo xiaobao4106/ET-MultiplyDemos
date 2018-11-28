@@ -7,9 +7,9 @@ Moba5V5
 MMO
 
 创建角色界面我想做成同一个角色可以更换武器来使用不同职业的技能，这里要用到自定义组装模型。
-2个角色：男、女；
-2个职业：战士、法师；
-2把武器：剑、法杖；
+2个角色：男、女;
+2个职业：战士、法师
+2把武器：剑、法杖
 
 新增：
 Sekia_Avater：用于测试组装自定义模型 更换武器/外观
@@ -19,21 +19,23 @@ ET主群：474643097
 QQ449224404
 
 # 运行向导
+使用ET-FGUI分支2018年11月14日版本
 软件环境：VS2017（跨平台开发支持/Unity支持）/MongoDB默认配置 ⇒ 运行启动.bat启动服务端 ⇒ Unity2018.3最新版 
 
 # ET版本升级指南
 ♦Unity部分，同时打开旧的客户端和全新的ET客户端，按顺序将文件夹拖入新客户端：
 Res/Config/* （自定义配置）
-Bundles/Sekia（删除Bundles目录下原有文件）
+Bundles/*（删除Bundles目录下原有文件）
+Resources/Sekia
 Editor/Sekia （删除ExcelExporterEditor文件夹）
 Hotfix/Sekia
 Model/Sekia
 Scenes/* （删除默认场景）
 覆盖Model/Module/Message/ErrorCode.cs （和服务端共享ErrorCode）
-覆盖Model/Entity/Scene.cs （自定义场景名）
 编译Protoc一次
-Tools/导出配置/导出客户端配置一次
+Tools/导出配置/导出客户端配置一次/导出FGUI资源一次
 修复缺失partial关键字
+设置Build场景列表
 
 ♦Server部分，同时打开旧的Server目录和全新的Server目录，复制粘贴文件或文件夹：
 Server/App/Program.cs

@@ -1,6 +1,5 @@
 ﻿using FairyGUI;
 
-
 namespace ETModel
 {
 	[ObjectSystem]
@@ -10,7 +9,7 @@ namespace ETModel
 		{
 			GRoot.inst.SetContentScaleFactor(1280, 720, UIContentScaler.ScreenMatchMode.MatchWidthOrHeight);
 			self.Root = ComponentFactory.Create<FUI, GObject>(GRoot.inst);
-        }
+		}
 	}
 
 	/// <summary>

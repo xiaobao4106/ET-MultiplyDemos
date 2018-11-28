@@ -9,9 +9,9 @@ namespace ETModel
 	{
 		public long Id { get; set; }
 		public string Name;
-		public string Desc;
-		public int Position;
-		public int Height;
-		public int Weight;
+		public string[] Desc;
+		public int[] Position;
+		public long[] Height;
+		public double[] Weight;
 	}
 }

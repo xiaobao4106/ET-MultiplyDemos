@@ -29,8 +29,7 @@
 
 			base.Dispose();
 
-            Log.Debug("删除Session");
-            this.Session.Dispose();
+			this.Session.Dispose();
 			this.Session = null;
 			Instance = null;
 		}
