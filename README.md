@@ -33,7 +33,8 @@ Model/Sekia
 Scenes/* （删除默认场景）
 覆盖Model/Module/Message/ErrorCode.cs （和服务端共享ErrorCode）
 编译Protoc一次
-Tools/导出配置/导出客户端配置一次/导出FGUI资源一次
+Tools/导出配置/导出客户端配置一次
+导出FGUI资源一次
 修复缺失partial关键字
 设置Build场景列表
 
