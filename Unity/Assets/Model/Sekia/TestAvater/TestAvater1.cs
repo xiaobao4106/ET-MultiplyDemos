@@ -35,7 +35,7 @@ public class App
 	}
 }
 
-public class Main : MonoBehaviour {
+public class TestAvater1 : MonoBehaviour {
 
 	private readonly string[] index = new string[]{ "004", "006", "008" };
     /// <summary>
