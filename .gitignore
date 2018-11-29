@@ -14,6 +14,9 @@ Opt/
 */Temp/
 */TestResults/
 
+发布到本地分布式.bat
+发布到远程分布式.bat
+/Server/Tools/cwRsync/Config/rsync_sekia.secrets
 **/.vs
 */.svn/
 FairyGUI/.objs/
