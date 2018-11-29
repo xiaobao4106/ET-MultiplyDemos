@@ -32,10 +32,12 @@ namespace ETModel
             {
                 //Log.Debug("创建唯一Session");
                 Game.Scene.AddComponent<SessionComponent>().Session = sessionGate;
+                Game.EventSystem.Run(EventIdType.SetHotfixSession);
             }
             else
             {
                 SessionComponent.Instance.Session = sessionGate;
+                Game.EventSystem.Run(EventIdType.SetHotfixSession);
             }
             
             A0003_LoginGate_G2C messageGate = (A0003_LoginGate_G2C)await sessionGate.Call(new A0003_LoginGate_C2G() { GateLoginKey = messageRealm.GateLoginKey });

@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8347f75bbf20473292de676504ad7398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasName: BattleCanvas
+  CanvasName: Canvas
 --- !u!114 &114674905131612232
 MonoBehaviour:
   m_ObjectHideFlags: 0

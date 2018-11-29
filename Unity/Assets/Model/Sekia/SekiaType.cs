@@ -13,6 +13,10 @@ namespace ETModel
         public const string SekiaInitSceneStart = "SekiaInitSceneStart";
         public const string SekiaLoginFinish = "SekiaLoginFinish";
         public const string CreateCharacterFinish = "CreateCharacterFinish";
+        public const string NoneFGUIFinish = "NoneFGUIFinish";
+        public const string SekiaInitLobby = "SekiaInitLobby";
+        public const string SetHotfixSession = "SetHotfixSession";
+
         public const string SelectCharacterFinish = "SelectCharacterFinish";
         public const string SelectHandCard = "SelectHandCard";
         public const string CancelHandCard = "CancelHandCard";
@@ -24,6 +28,8 @@ namespace ETModel
         public const string SekiaLogin = "SekiaLogin";
         public const string CreateCharacter = "CreateCharacter";
         public const string SelectCharacter = "SelectCharacter";
+        public const string NoneFGUI = "NoneFGUI";
+
     }
     
     [Event(EventIdType.SekiaInitSceneStart)]

@@ -81,6 +81,7 @@
     <image id="ua6i2i" name="pic5.png" path="/03_SelectCharacter/Resource/" exported="true"/>
     <component id="ua6i2j" name="SelectCharacter.xml" path="/03_SelectCharacter/" exported="true"/>
     <component id="kzfm2l" name="SelectButton.xml" path="/03_SelectCharacter/" exported="true"/>
+    <component id="v0122m" name="NoneFGUI.xml" path="/00_None/" exported="true"/>
   </resources>
   <publish name="Sekia"/>
 </packageDescription>

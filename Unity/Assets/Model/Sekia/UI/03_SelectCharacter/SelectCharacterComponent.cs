@@ -158,7 +158,11 @@ namespace ETModel
             {
                 Log.Debug("等待进入游戏世界");
                 //请求使用指定角色进入游戏
-                //SekiaHelper.Register(this.AccountInput.Get("Input").GObject.asTextInput.text, this.PasswordInput.Get("Input").GObject.asTextInput.text).NoAwait();
+
+                //加载透明界面 退出当前界面
+                NoneFGUIFactory.Create();
+                Game.EventSystem.Run(EventIdType.SekiaInitLobby);
+                Game.EventSystem.Run(EventIdType.SelectCharacterFinish);
             }
         }
         
