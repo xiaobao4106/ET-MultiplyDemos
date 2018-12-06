@@ -1,25 +1,7 @@
-﻿/*
-
-    It is a Unity project that display how to build the avatar equipment system in Unity.
-    Equipment system is very important in the Game, specially in MMO Game.
-
-    Normally, equipment system contains tow important parts. 
-    Since the appearance of equipments are different(the mesh are different), so to merge these meshes together is necessary. 
-    Second, after merge meshes, the new mesh contains many materials(in this project, it has 4 material), that means it has at least 4 drawcalls(depends in the shader).
-    So to merge materials together will reduce drawcalls and improve game performance.
-
- 
- * 换装系统包含两个重要的部分，由于身体的各个部件是单独的prefab，因此需要合并其Mesh和Material
- * 
-
-*/
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// A simple framework of the game.
-/// </summary>
+//简单的游戏框架 没有啥用
 public class App
 {
 	private static App app = new App();
@@ -35,47 +17,43 @@ public class App
 	}
 }
 
-public class TestAvater1 : MonoBehaviour {
-
+public class TestAvater1 : MonoBehaviour
+{
+    //部件状态默认配置 Prefab命名规则
 	private readonly string[] index = new string[]{ "004", "006", "008" };
-    /// <summary>
-    /// Config default equipment informations.
-    /// </summary>
-	private const int DEFAULT_WEAPON = 0;
-	private const int DEFAULT_HEAD = 2;
-	private const int DEFAULT_CHEST = 0;
-	private const int DEFAULT_HAND = 0;
-	private const int DEFAULT_FEET = 1;
-	private const bool DEFAULT_COMBINEMATERIAL = true;
-	
-    /// <summary>
-    /// Use this for GUI display.
-    /// </summary>
-	private bool combine = DEFAULT_COMBINEMATERIAL;
+	private const int DEFAULT_WEAPON = 0;//默认武器
+	private const int DEFAULT_HEAD = 0; //默认头部
+	private const int DEFAULT_CHEST = 0;//默认胸部
+	private const int DEFAULT_HAND = 0; //默认护手
+	private const int DEFAULT_FEET = 0; //默认鞋子
+	private const bool DEFAULT_COMBINEMATERIAL = true; //是否合并材质
+
+    //UI参数容器
+    private bool combine = DEFAULT_COMBINEMATERIAL;
 	private bool[] weapon_list = new bool[3];
 	private bool[] head_list = new bool[3];
 	private bool[] chest_list = new bool[3];
 	private bool[] hand_list = new bool[3];
 	private bool[] feet_list = new bool[3];
     
-    /// <summary>
-    /// The avatar in the scene.
-    /// </summary>
+    //当前场景中的合成角色对象
 	private UCharacterController character = null;
-
-	// Use this for initialization
+    
 	void Start () 
     {
-
-        // for GUI display
+        //设置默认参数
 		weapon_list [DEFAULT_WEAPON] = true;
 		head_list [DEFAULT_HEAD] = true;
 		chest_list [DEFAULT_CHEST] = true;
 		hand_list [DEFAULT_HAND] = true;
 		feet_list [DEFAULT_FEET] = true;
 
-        // create an avatar
-		character = App.Game.CharacterMgr.Generatecharacter (
+        //创建合成角色 调整位置和角度
+        //这里使用UCharacterMgr类用于管理所有合成角色 该类在本例中用处不大
+        //核心过程就是实例化了一个UCharacterController（合成角色）对象
+        //Prefab名需要遵守命名规则
+        //如果需要使用这套系统直接实例化对象后添加到自己的玩家管理组件即可
+        character = App.Game.CharacterMgr.Generatecharacter (
 			"ch_pc_hou", 
 			"ch_we_one_hou_" + index[DEFAULT_WEAPON],
 			"ch_pc_hou_" + index[DEFAULT_HEAD] + "_tou", 
@@ -87,7 +65,7 @@ public class TestAvater1 : MonoBehaviour {
 		character.Instance.transform.eulerAngles = new Vector3 (0, 180, 0);
 	}
 	
-	// Update is called once per frame
+	//执行合成玩家管理器的更新 这里的管理器是一个单例 没啥好更新的
 	void Update () 
     {
 		App.Game.Update();
@@ -95,7 +73,6 @@ public class TestAvater1 : MonoBehaviour {
 
 	void OnGUI () 
     {
-
 		GUI.Button (new Rect (0, 0, 100, 30),   "Euipments 1");
 		GUI.Button (new Rect (100, 0, 100, 30), "Euipments 2");
 		GUI.Button (new Rect (200, 0, 100, 30), "Euipments 3");
